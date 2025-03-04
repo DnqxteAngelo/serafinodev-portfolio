@@ -25,19 +25,19 @@ export default function Hero() {
                 </Button>
               </div>
                 <div className="flex justify-center gap-4 pt-4 md:justify-start">
-                <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <Link href="https://github.com/DnqxteAngelo" target="_blank" rel="noopener noreferrer">
                   <Button variant="ghost" size="icon">
                   <Github className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
                   </Button>
                 </Link>
-                <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <Link href="https://linkedin.com/in/angelo-serafino-19b6b6354/" target="_blank" rel="noopener noreferrer">
                   <Button variant="ghost" size="icon">
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                   </Button>
                 </Link>
-                <Link href="mailto:hello@example.com">
+                <Link href="mailto:serafinoangelo28@gmail.com">
                   <Button variant="ghost" size="icon">
                   <Mail className="h-5 w-5" />
                   <span className="sr-only">Email</span>
