@@ -39,13 +39,27 @@ const socialItems = [
   {
     label: "LinkedIn",
     icon: <Linkedin />,
-    link: "https://linkedin.com//in/angelo-serafino-19b6b6354/",
+    link: "https://linkedin.com/in/angelo-serafino-19b6b6354/",
   },
   { label: "Email", icon: <Mail />, link: "mailto:serafinoangelo28@gmail.com" },
 ];
 
 export default function DockNav() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Set initial screen width check
+    setIsMobile(window.innerWidth < 768);
+
+    // Listen for resize events
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme") as
@@ -86,21 +100,25 @@ export default function DockNav() {
           </DockIcon>
         ))}
 
-        <Separator orientation="vertical" className="h-full py-2" />
+        {!isMobile && (
+          <>
+            <Separator orientation="vertical" className="h-full py-2" />
 
-        {socialItems.map((item) => (
-          <DockIcon
-            key={item.label}
-            onClick={() => window.open(item.link, "_blank")}
-          >
-            <Tooltip>
-              <TooltipTrigger asChild>{item.icon}</TooltipTrigger>
-              <TooltipContent>
-                <p>{item.label}</p>
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
-        ))}
+            {socialItems.map((item) => (
+              <DockIcon
+                key={item.label}
+                onClick={() => window.open(item.link, "_blank")}
+              >
+                <Tooltip>
+                  <TooltipTrigger asChild>{item.icon}</TooltipTrigger>
+                  <TooltipContent>
+                    <p>{item.label}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </DockIcon>
+            ))}
+          </>
+        )}
 
         <Separator orientation="vertical" className="h-full py-2" />
 

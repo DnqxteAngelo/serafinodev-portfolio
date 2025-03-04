@@ -15,35 +15,35 @@ export default function Hero() {
                 </p>
               </div>
               <div className="flex gap-4">
-                <Button asChild>
+                <Button className="flex-1 md:flex-none" asChild>
                   <Link href="#contact">
-                    Get in touch <ArrowRight className="ml-2 h-4 w-4" />
+                  Get in touch <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button variant="outline" asChild>
+                <Button className="flex-1 md:flex-none" variant="outline" asChild>
                   <Link href="#projects">View my work</Link>
                 </Button>
               </div>
-              <div className="flex gap-4 pt-4">
+                <div className="flex justify-center gap-4 pt-4 md:justify-start">
                 <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
                   <Button variant="ghost" size="icon">
-                    <Github className="h-5 w-5" />
-                    <span className="sr-only">GitHub</span>
+                  <Github className="h-5 w-5" />
+                  <span className="sr-only">GitHub</span>
                   </Button>
                 </Link>
                 <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                   <Button variant="ghost" size="icon">
-                    <Linkedin className="h-5 w-5" />
-                    <span className="sr-only">LinkedIn</span>
+                  <Linkedin className="h-5 w-5" />
+                  <span className="sr-only">LinkedIn</span>
                   </Button>
                 </Link>
                 <Link href="mailto:hello@example.com">
                   <Button variant="ghost" size="icon">
-                    <Mail className="h-5 w-5" />
-                    <span className="sr-only">Email</span>
+                  <Mail className="h-5 w-5" />
+                  <span className="sr-only">Email</span>
                   </Button>
                 </Link>
-              </div>
+                </div>
             </div>
             <div className="flex items-center justify-center">
               <div className="relative aspect-square w-full max-w-[350px] overflow-hidden rounded-full border-4 border-border">
